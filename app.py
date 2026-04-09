@@ -171,7 +171,12 @@ footer { visibility: hidden; }
 """, unsafe_allow_html=True)
 
 # ------------------ Load Model ------------------
-
+def load_accuracy():
+    try:
+        with open("models/accuracy.txt", "r") as f:
+            return f.read()
+    except:
+        return "Not Available"
 @st.cache_resource
 def load_model():
     with open("models/ensemble_model.pkl", "rb") as f:
@@ -184,6 +189,7 @@ def load_model():
 
 try:
     ensemble, scaler, selected_features = load_model()
+    accuracy = load_accuracy()   
     model_loaded = True
 except Exception as e:
     model_loaded = False
@@ -306,12 +312,12 @@ if model_loaded:
             </div>
             """, unsafe_allow_html=True)
 
-        st.markdown("""
+        st.markdown(f"""
         <div class="info-card">
             <strong style="color:#e85d5d;">About this model</strong><br>
             Ensemble of Random Forest, AdaBoost & XGBoost<br>
             Trained on 1481 clinical CBC records<br>
             SMOTE applied for class balancing<br>
-            Test Accuracy: <strong style="color:#1a1a1a;">93.60</strong>
+            Test Accuracy: <strong style="color:#1a1a1a;">{accuracy}</strong>
         </div>
         """, unsafe_allow_html=True)
