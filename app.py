@@ -310,8 +310,8 @@ if model_loaded:
         <div class="info-card">
             <strong style="color:#e85d5d;">About this model</strong><br>
             Ensemble of Random Forest, AdaBoost & XGBoost<br>
-            Trained on 1281 clinical CBC records<br>
+            Trained on 1481 clinical CBC records<br>
             SMOTE applied for class balancing<br>
-            Test Accuracy: <strong style="color:#1a1a1a;">91.05%</strong>
+            Test Accuracy: <strong style="color:#1a1a1a;">93.60</strong>
         </div>
         """, unsafe_allow_html=True)

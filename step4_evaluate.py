@@ -43,6 +43,9 @@ acc = accuracy_score(y_test, y_pred)
 print("\n" + "=" * 55)
 print(f"  TEST ACCURACY : {acc * 100:.2f}%")
 print("=" * 55)
+# Save accuracy to file (for Streamlit UI)
+with open("models/accuracy.txt", "w") as f:
+    f.write(f"{acc * 100:.2f}%")
 
 # ------------------ Classification Report ------------------
 
