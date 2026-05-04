@@ -2,8 +2,8 @@
 # STEP 2 - FEATURE SELECTION & TRANSFORMATION
 # Project: Ensemble Learning Model for Multi-Level Anemia Severity Prediction
 # ============================================================
-# - Removes data leakage columns (HGB used to create labels)
-# - Removes low-importance features (PDW)
+# - Removes data leakage columns
+# - Removes low-importance features (PDW, LYMn, NEUTn, PCT)
 # - Displays feature correlation with target
 # - Saves selected features list
 # ============================================================
@@ -26,9 +26,11 @@ print(f"  Shape: {df.shape}")
 
 print("\n[STEP 2] Removing leakage and unwanted columns...")
 
-# HGB  → used to define labels (direct leakage)
-# PDW  → clinically less relevant for severity prediction
-DROP_COLS = ["Diagnosis", "Severity", "Severity_Label", "HGB", "PDW"]
+# PDW   → clinically less relevant for severity prediction
+# LYMn  → removed (low importance / not needed)
+# NEUTn → removed (low importance / not needed)
+# PCT   → removed (low importance / not needed)
+DROP_COLS = ["Diagnosis", "Severity", "Severity_Label", "PDW", "LYMn", "NEUTn", "PCT"]
 
 X = df.drop(columns=DROP_COLS)
 y = df["Severity_Label"]

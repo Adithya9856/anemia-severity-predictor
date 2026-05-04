@@ -214,6 +214,7 @@ NORMAL_RANGES = {
     "LYMn" : "1.0 – 4.8 ×10³/µL",
     "NEUTn": "1.8 – 7.7 ×10³/µL",
     "RBC"  : "4.2 – 5.4 ×10⁶/µL",
+    "HGB"  : "12.0 – 17.5 g/dL",
     "HCT"  : "36 – 48 %",
     "MCV"  : "80 – 100 fL",
     "MCH"  : "27 – 33 pg",
@@ -224,7 +225,7 @@ NORMAL_RANGES = {
 
 DEFAULT_VALUES = {
     "WBC": 0.0, "LYMp": 0.0, "NEUTp": 0.0, "LYMn": 0.0,
-    "NEUTn": 0.0, "RBC": 0.0, "HCT": 0.0, "MCV": 0.0,
+    "NEUTn": 0.0, "RBC": 0.0,"HGB": 0.0,"HCT": 0.0, "MCV": 0.0,
     "MCH": 0.0, "MCHC": 0.0, "PLT": 0.0, "PCT": 0.0
 }
 
